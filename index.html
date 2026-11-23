@@ -22,7 +22,7 @@
             margin: auto;
             margin-top: 10%;
             margin-bottom: 10%;
-            width: 60%;
+            width: 50%;
             box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.52);
         }
 
@@ -36,14 +36,14 @@
             padding: 20px;
         }
 
-        #instructions{
+        #example{
             background-color: #f3c4e071;
             padding: 10px;
             border-radius: 5px;
             color: rgb(67, 66, 66);
         }
 
-        #formbox{
+        #form{
             display: inline-block;
             text-align: left;
         }
@@ -68,6 +68,7 @@
             height: 50px;
         }
     </style>
+
 </head>
 <body>
     <div class="container">
@@ -80,29 +81,29 @@
 
         <br>
 
-        <div class="col" id="formbox">
+        <div class="col" id="form">
 
-            <div id="instructions">
+            <div id="example">
                 <h5><b>Instructions:</b></h5>
                 <p>Enter the <b>symbol</b> of a non-metal element
                 <br>
-                (Example: H, O, Ne, Xe)</p>
+                (Example: H, O, Xe)</p>
             </div>
 
             <br>
         
             <form>
-                <label for="nonmetals">🔍 Element Symbol:</label>
+                <label for="nonmetals">Element Symbol:</label>
                 <br>
                 <input type="text" id="nonmetals" class="form-control">
                 <br>
-                <button type="button" class="btn" py-click="check_element">Check</button>
+                <button type="button" class="btn" py-click="check_element">CHECK</button>
             </form>
 
         <br><br>
 
-            <h5>📋Result:</h5>
-                <div id="output1"></div>
+            <h5>Result:</h5>
+                <div id="elements"></div>
         </div>
     </div>
     <script type="py" src="main.py"></script>
