@@ -1,7 +1,7 @@
 from pyscript import document, display
 
 def check_element(e):
-    document.getElementById("elements").innerHTML = "" # clears previous result
+    document.getElementById("elements").innerHTML = "" 
 
     nonmetals = {
         "H" : ("Hydrogen", 1, 1.008), 
@@ -28,7 +28,7 @@ def check_element(e):
 
     result = nonmetals.get(element_name_final, ("Element not found" , " - " , " - "))
 
-    document.getElementById("output1").innerHTML = f"""
+    document.getElementById("elements").innerHTML = f"""
     <b>Symbol:</b> {element_name_final}<br>
     <b>Element:</b> {result[0]}<br>
     <b>Atomic Number:</b> {result[1]}<br>
