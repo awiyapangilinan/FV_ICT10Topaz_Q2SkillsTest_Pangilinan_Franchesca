@@ -1,35 +1,29 @@
+
 from pyscript import document, display
 
+weather_instruments = {
+    "Thermometer": ("Air Temperature", "Degrees Celsius (°C)", "Measures how hot or cold the air is."),
+    "Barometer": ("Atmospheric Pressure", "Hectopascals (hPa)", "Measures air pressure to help monitor weather changes."),
+    "Anemometer": ("Wind Speed", "Kilometers per hour (km/h)", "Measures how fast the wind is blowing."),
+    "Hygrometer": ("Relative Humidity", "Percent (%)", "Measures the amount of moisture in the air."),
+    "Rain Gauge": ("Rainfall", "Millimeters (mm)", "Measures the amount of rainfall in an area."),
+    "Wind Vane": ("Wind Direction", "Cardinal Directions", "Identifies the direction from which the wind is blowing."),
+    "Weather Balloon": ("Atmospheric Conditions", "Varies", "Collects atmospheric data at different altitudes."),
+    "Pyranometer": ("Solar Radiation", "Watts per square meter (W/m²)", "Measures incoming solar radiation.")
+}
+
+
 def check_element(e):
-    document.getElementById("elements").innerHTML = "" 
+    document.getElementById("elements").innerHTML = ""
 
-    nonmetals = {
-        "H" : ("Hydrogen", 1, 1.008), 
-        "He" : ("Helium", 2, 4.0026), 
-        "C" : ("Carbon", 6, 12.011),  
-        "N" : ("Nitrogen", 7, 14.007),  
-        "O" : ("Oxygen", 8, 15.999),
-        "F" : ("Fluorine", 9, 18.998),
-        "Ne" : ("Neon", 10, 20.180),   
-        "P" : ("Phosporus", 15, 30.974),  
-        "S" : ("Sulfur", 16, 32.065),
-        "Cl" : ("Chlorine", 17, 35.453),
-        "Ar" : ("Argon", 18, 39.948), 
-        "Se" : ("Selenium", 34, 78.960),
-        "Br" : ("Bromine", 35, 79.904),
-        "Kr" : ("Krypton", 36, 83.798), 
-        "I" : ("Iodine", 53, 126.90), 
-        "Xe" : ("Xenon", 54, 131.29), 
-        "Rn" : ("Radon", 86, 222),    
-    }
+    instrument_name = document.getElementById("weather_instruments").value
+    instrument_name_final = instrument_name.strip().title()
 
-    element_name = document.getElementById("nonmetals").value
-    element_name_final = element_name.title()
-
-    result = nonmetals.get(element_name_final, ("Element not found" , " - " , " - "))
+    result = weather_instruments.get(instrument_name_final, ("Instrument not included in the dataset", " - ", " - "))
 
     document.getElementById("elements").innerHTML = f"""
-    <b>Symbol:</b> {element_name_final}<br>
-    <b>Element:</b> {result[0]}<br>
-    <b>Atomic Number:</b> {result[1]}<br>
-    <b>Atomic Mass:</b> {result[2]} """
+    <b>Weather Instrument:</b> {instrument_name_final}<br>
+    <b>What It Measures:</b> {result[0]}<br>
+    <b>Unit of Measurement:</b> {result[1]}<br>
+    <b>Purpose:</b> {result[2]}
+    """
